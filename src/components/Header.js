@@ -1,8 +1,8 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import pageLogo from '../assets/images/planet.png';
 
 const Container = styled.header`
-  display: flex;
   padding: 1rem;
   border-bottom: 2px solid black;
 `;
@@ -16,19 +16,39 @@ const LogoStyle = {
   width: '4.8rem',
 };
 
+const LinksContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const InnerContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const Header = () => {
   const PageLogo = () => <img src={pageLogo} style={LogoStyle} alt="page-logo" />;
   const title = 'Space Travelers\' Hub';
 
   return (
     <Container>
-      <nav>
+      <InnerContainer>
         <PageInfo>
           <PageLogo />
           <h1>{title}</h1>
         </PageInfo>
-        <div />
-      </nav>
+        <LinksContainer>
+          <NavLink
+            to="/"
+            style={({ isActive }) => ({
+              color: isActive ? '#000' : '#545e6f',
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            Rockets
+          </NavLink>
+        </LinksContainer>
+      </InnerContainer>
     </Container>
   );
 };
