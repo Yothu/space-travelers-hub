@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reserveRocket } from '../../redux/rockets/rockets';
+import { reserveRocket, cancelRocket } from '../../redux/rockets/rockets';
 
 const RocketContainer = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ const ImageStyle = {
   height: '14rem',
 };
 
-const ReservationBtn = styled.button`
+const ReserveBtn = styled.button`
   border: none;
   color: white;
   cursor: pointer;
@@ -36,6 +36,16 @@ const ReservationBtn = styled.button`
   font-size: 1.1rem;
   border-radius: 5px;
   background-color: #4844FF;
+`;
+
+const CancelBtn = styled.button`
+  border: 1px solid gray;
+  color: gray;
+  cursor: pointer;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  background-color: white;
 `;
 
 const Rocket = ({
@@ -48,13 +58,18 @@ const Rocket = ({
     dispatch(reserveRocket(id));
   };
 
+  const cancelReservation = () => {
+    dispatch(cancelRocket(id));
+  };
+
   return (
     <RocketContainer id={id}>
       <Image />
       <DataContainer>
         <Name>{name}</Name>
         <Description>{description}</Description>
-        <ReservationBtn onClick={resRocket}>Reserve Rocket</ReservationBtn>
+        <ReserveBtn onClick={resRocket}>Reserve Rocket</ReserveBtn>
+        <CancelBtn onClick={cancelReservation}>Cancel Reservation</CancelBtn>
       </DataContainer>
     </RocketContainer>
   );
