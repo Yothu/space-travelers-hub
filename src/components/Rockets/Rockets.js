@@ -15,7 +15,7 @@ const Rockets = () => {
   useEffect(async () => {
     const APIrockets = await getRocketsFromAPI();
     dispatch(listRockets(APIrockets));
-  }, [dispatch]);
+  }, []);
 
   return (
     <RocketsContainer>
