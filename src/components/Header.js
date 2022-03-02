@@ -49,6 +49,16 @@ const Header = () => {
             Rockets
           </NavLink>
           <NavLink
+            to="/missions"
+            style={({ isActive }) => ({
+              color: '#000FFF',
+              padding: '0 0.5rem',
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            Missions
+          </NavLink>
+          <NavLink
             to="/profile"
             style={({ isActive }) => ({
               color: '#000FFF',
