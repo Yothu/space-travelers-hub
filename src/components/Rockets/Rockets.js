@@ -13,8 +13,10 @@ const Rockets = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
 
   useEffect(async () => {
-    const APIrockets = await getRocketsFromAPI();
-    dispatch(listRockets(APIrockets));
+    if (rockets === []) {
+      const APIrockets = await getRocketsFromAPI();
+      dispatch(listRockets(APIrockets));
+    }
   }, []);
 
   return (
