@@ -47,6 +47,15 @@ const Header = () => {
           >
             Rockets
           </NavLink>
+          <NavLink
+            to="/profile"
+            style={({ isActive }) => ({
+              color: isActive ? '#000' : '#545e6f',
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            My Profile
+          </NavLink>
         </LinksContainer>
       </InnerContainer>
     </Container>
