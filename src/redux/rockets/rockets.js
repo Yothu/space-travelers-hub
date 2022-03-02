@@ -50,6 +50,7 @@ const getRocketsFromAPI = async () => {
     const ROCKETS = [];
     for (let i = 0; i < RAW_ROCKETS.length; i += 1) {
       ROCKETS.push({
+        reserved: false,
         id: RAW_ROCKETS[i].id,
         name: RAW_ROCKETS[i].rocket_name,
         image: RAW_ROCKETS[i].flickr_images[0],

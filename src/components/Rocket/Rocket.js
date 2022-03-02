@@ -48,8 +48,18 @@ const CancelBtn = styled.button`
   background-color: white;
 `;
 
+const ReservedTag = styled.span`
+  color: white;
+  padding: 0.1rem;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: green;
+`;
+
 const Rocket = ({
-  id, image, name, description,
+  id, image, name, description, reserved,
 }) => {
   const dispatch = useDispatch();
   const Image = () => <img src={image} style={ImageStyle} alt={name} />;
@@ -67,9 +77,18 @@ const Rocket = ({
       <Image />
       <DataContainer>
         <Name>{name}</Name>
-        <Description>{description}</Description>
-        <ReserveBtn onClick={resRocket}>Reserve Rocket</ReserveBtn>
-        <CancelBtn onClick={cancelReservation}>Cancel Reservation</CancelBtn>
+        <Description>
+          {reserved === true && (
+            <ReservedTag>Reserved</ReservedTag>
+          )}
+          {description}
+        </Description>
+        {reserved === true && (
+          <CancelBtn onClick={cancelReservation}>Cancel Reservation</CancelBtn>
+        )}
+        {reserved === false && (
+          <ReserveBtn onClick={resRocket}>Reserve Rocket</ReserveBtn>
+        )}
       </DataContainer>
     </RocketContainer>
   );
@@ -79,6 +98,7 @@ Rocket.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
 };
 
