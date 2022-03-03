@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rocket component it renders 1`] = `
+<div
+  className="sc-bdvvtL kbYwEE"
+  id={2}
+>
+  <img
+    alt="Falcon 9"
+    src="image"
+    style={
+      Object {
+        "height": "9rem",
+        "width": "12rem",
+      }
+    }
+  />
+  <div
+    className="sc-gsDKAQ iLjpKD"
+  >
+    <h3
+      className="sc-dkPtRN YpXkX font-1"
+    >
+      Falcon 9
+    </h3>
+    <p
+      className="sc-hKwDye iiXaFm font-1"
+    >
+      very rocket
+    </p>
+    <button
+      className="sc-eCImPb dMdLSA font-1"
+      onClick={[Function]}
+    >
+      Reserve Rocket
+    </button>
+  </div>
+</div>
+`;
