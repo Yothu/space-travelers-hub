@@ -1,4 +1,5 @@
 const LIST_ROCKETS = 'space-travelers/rockets/LIST_ROCKETS';
+const RESERVE_ROCKET = 'space-travelers/rockets/RESERVE_ROCKET';
 
 const initialState = [];
 
@@ -6,6 +7,13 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LIST_ROCKETS:
       return action.payload;
+    case RESERVE_ROCKET:
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) {
+          return rocket;
+        }
+        return { ...rocket, reserved: true };
+      });
     default:
       return state;
   }
@@ -14,6 +22,11 @@ const reducer = (state = initialState, action) => {
 const listRockets = (payload) => ({
   type: LIST_ROCKETS,
   payload,
+});
+
+const reserveRocket = (id) => ({
+  type: RESERVE_ROCKET,
+  id,
 });
 
 const getRocketsFromAPI = async () => {
@@ -36,4 +49,4 @@ const getRocketsFromAPI = async () => {
 };
 
 export default reducer;
-export { getRocketsFromAPI, listRockets };
+export { getRocketsFromAPI, listRockets, reserveRocket };
