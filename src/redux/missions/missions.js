@@ -1,5 +1,6 @@
 const LIST_MISSIONS = 'SPACE-TRAVELERS/MISSIONS/LIST_MISSIONS';
 const JOIN_MISSION = 'SPACE-TRAVELERS/MISSIONS/JOIN_MISSION';
+const LEAVE_MISSION = 'SPACE-TRAVELERS/MISSIONS/LEAVE_MISSION';
 
 const initialState = [];
 
@@ -14,6 +15,13 @@ const reducer = (state = initialState, action) => {
         }
         return { ...mission, reserved: true };
       });
+    case LEAVE_MISSION:
+      return state.map((mission) => {
+        if (mission.id !== action.id) {
+          return mission;
+        }
+        return { ...mission, reserved: false };
+      });
     default:
       return state;
   }
@@ -26,6 +34,11 @@ const listMissions = (payload) => ({
 
 const joinMission = (id) => ({
   type: JOIN_MISSION,
+  id,
+});
+
+const leaveMission = (id) => ({
+  type: LEAVE_MISSION,
   id,
 });
 
@@ -49,4 +62,6 @@ const getMissionsFromAPI = async () => {
 };
 
 export default reducer;
-export { getMissionsFromAPI, listMissions, joinMission };
+export {
+  getMissionsFromAPI, listMissions, joinMission, leaveMission,
+};

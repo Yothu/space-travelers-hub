@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import '../Font.css';
 import { useDispatch } from 'react-redux';
-import { joinMission } from '../../redux/missions/missions';
+import { joinMission, leaveMission } from '../../redux/missions/missions';
 
 const TableData = styled.td`
   padding: 8px;
@@ -20,6 +20,7 @@ const TableDataStatus = styled.td`
 
 const JoinBtn = styled.button`
   color: black;
+  cursor: pointer;
   padding: 0.3rem;
   margin: 0 0.6rem;
   border-radius: 3px;
@@ -30,6 +31,7 @@ const JoinBtn = styled.button`
 
 const LeaveBtn = styled.button`
   color: red;
+  cursor: pointer;
   padding: 0.3rem;
   margin: 0 0.6rem;
   border-radius: 3px;
@@ -73,6 +75,10 @@ const Mission = ({ id, name, description }) => {
     dispatch(joinMission(id));
   };
 
+  const lveMission = () => {
+    dispatch(leaveMission(id));
+  };
+
   return (
     <tr key={id}>
       <TableData style={nameStyle} className="font-1">{name}</TableData>
@@ -83,7 +89,7 @@ const Mission = ({ id, name, description }) => {
       </TableDataStatus>
       <TableDataStatus>
         <JoinBtn className="font-1" onClick={jnMission}>Join Mission</JoinBtn>
-        <LeaveBtn className="font-1">Leave Mission</LeaveBtn>
+        <LeaveBtn className="font-1" onClick={lveMission}>Leave Mission</LeaveBtn>
       </TableDataStatus>
     </tr>
   );
