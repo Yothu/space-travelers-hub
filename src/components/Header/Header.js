@@ -5,23 +5,25 @@ import '../Font.css';
 
 const Container = styled.header`
   padding: 0.5rem 1rem;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid lightgray;
 `;
 
 const PageInfo = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const LogoStyle = {
-  width: '4rem',
-  height: '4rem',
+  width: '3rem',
+  height: '3rem',
   paddingLeft: '1rem',
   paddingRight: '1rem',
 };
 
 const Title = styled.h1`
-  font-size: 1.5rem;
+  margin: 0;
   font-weight: 400;
+  font-size: 1.5rem;
   font-family: Arial, Helvetica, sans-serif !important;
 `;
 
@@ -53,6 +55,7 @@ const Header = () => {
             style={({ isActive }) => ({
               color: '#000FFF',
               padding: '0 0.5rem',
+              fontSize: '0.8rem',
               textDecoration: isActive ? 'underline' : 'none',
             })}
           >
@@ -63,6 +66,7 @@ const Header = () => {
             style={({ isActive }) => ({
               color: '#000FFF',
               padding: '0 0.5rem',
+              fontSize: '0.8rem',
               textDecoration: isActive ? 'underline' : 'none',
             })}
           >
@@ -73,6 +77,7 @@ const Header = () => {
             style={({ isActive }) => ({
               color: '#000FFF',
               padding: '0 0 0 0.5rem',
+              fontSize: '0.8rem',
               borderLeft: '1px solid #000',
               textDecoration: isActive ? 'underline' : 'none',
             })}
