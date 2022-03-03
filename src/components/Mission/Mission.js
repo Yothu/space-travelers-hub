@@ -68,7 +68,9 @@ const nameStyle = {
   fontWeight: 'bold',
 };
 
-const Mission = ({ id, name, description }) => {
+const Mission = ({
+  id, name, description, reserved,
+}) => {
   const dispatch = useDispatch();
 
   const jnMission = () => {
@@ -84,12 +86,20 @@ const Mission = ({ id, name, description }) => {
       <TableData style={nameStyle} className="font-1">{name}</TableData>
       <TableData style={descriptionStyle} className="font-1">{description}</TableData>
       <TableDataStatus>
-        <NotActive className="font-1">NOT A MEMBER</NotActive>
-        <Active className="font-1">Active Member</Active>
+        {reserved === true && (
+          <Active className="font-1">Active Member</Active>
+        )}
+        {reserved === false && (
+          <NotActive className="font-1">NOT A MEMBER</NotActive>
+        )}
       </TableDataStatus>
       <TableDataStatus>
-        <JoinBtn className="font-1" onClick={jnMission}>Join Mission</JoinBtn>
-        <LeaveBtn className="font-1" onClick={lveMission}>Leave Mission</LeaveBtn>
+        {reserved === true && (
+          <LeaveBtn className="font-1" onClick={lveMission}>Leave Mission</LeaveBtn>
+        )}
+        {reserved === false && (
+          <JoinBtn className="font-1" onClick={jnMission}>Join Mission</JoinBtn>
+        )}
       </TableDataStatus>
     </tr>
   );
@@ -98,6 +108,7 @@ const Mission = ({ id, name, description }) => {
 Mission.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
 };
 
