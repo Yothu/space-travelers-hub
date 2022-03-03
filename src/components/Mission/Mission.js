@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import '../Font.css';
+import { useDispatch } from 'react-redux';
+import { joinMission } from '../../redux/missions/missions';
 
 const TableData = styled.td`
   padding: 8px;
@@ -64,23 +66,31 @@ const nameStyle = {
   fontWeight: 'bold',
 };
 
-const Mission = ({ id, name, description }) => (
-  <tr key={id}>
-    <TableData style={nameStyle} className="font-1">{name}</TableData>
-    <TableData style={descriptionStyle} className="font-1">{description}</TableData>
-    <TableDataStatus>
-      <NotActive className="font-1">NOT A MEMBER</NotActive>
-      <Active className="font-1">Active Member</Active>
-    </TableDataStatus>
-    <TableDataStatus>
-      <JoinBtn className="font-1">Join Mission</JoinBtn>
-      <LeaveBtn className="font-1">Leave Mission</LeaveBtn>
-    </TableDataStatus>
-  </tr>
-);
+const Mission = ({ id, name, description }) => {
+  const dispatch = useDispatch();
+
+  const jnMission = () => {
+    dispatch(joinMission(id));
+  };
+
+  return (
+    <tr key={id}>
+      <TableData style={nameStyle} className="font-1">{name}</TableData>
+      <TableData style={descriptionStyle} className="font-1">{description}</TableData>
+      <TableDataStatus>
+        <NotActive className="font-1">NOT A MEMBER</NotActive>
+        <Active className="font-1">Active Member</Active>
+      </TableDataStatus>
+      <TableDataStatus>
+        <JoinBtn className="font-1" onClick={jnMission}>Join Mission</JoinBtn>
+        <LeaveBtn className="font-1">Leave Mission</LeaveBtn>
+      </TableDataStatus>
+    </tr>
+  );
+};
 
 Mission.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
