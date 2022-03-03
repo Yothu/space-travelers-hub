@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import '../Font.css';
 
 const Container = styled.div`
   display: flex;
@@ -38,10 +39,10 @@ const Profile = () => {
   return (
     <Container>
       <RocketsSection>
-        <ProfileTitle>My Rockets</ProfileTitle>
+        <ProfileTitle className="font-1">My Rockets</ProfileTitle>
         <ReservedRockets>
           {
-            reservedRockets.map((rRock) => <RocketName key={rRock.id}>{rRock.name}</RocketName>)
+            reservedRockets.map((rRock) => <RocketName key={rRock.id} className="font-1">{rRock.name}</RocketName>)
           }
         </ReservedRockets>
       </RocketsSection>

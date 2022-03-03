@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { reserveRocket, cancelRocket } from '../../redux/rockets/rockets';
+import '../Font.css';
 
 const RocketContainer = styled.div`
   display: flex;
@@ -15,12 +16,10 @@ const DataContainer = styled.div`
 const Name = styled.h3`
   margin: 0;
   font-size: 1.3rem;
-  font-family: sans-serif;
 `;
 
 const Description = styled.p`
   font-size: 1.1rem;
-  font-family: sans-serif;
 `;
 
 const ImageStyle = {
@@ -76,18 +75,18 @@ const Rocket = ({
     <RocketContainer id={id}>
       <Image />
       <DataContainer>
-        <Name>{name}</Name>
-        <Description>
+        <Name className="font-1">{name}</Name>
+        <Description className="font-1">
           {reserved === true && (
             <ReservedTag>Reserved</ReservedTag>
           )}
           {description}
         </Description>
         {reserved === true && (
-          <CancelBtn onClick={cancelReservation}>Cancel Reservation</CancelBtn>
+          <CancelBtn className="font-1" onClick={cancelReservation}>Cancel Reservation</CancelBtn>
         )}
         {reserved === false && (
-          <ReserveBtn onClick={resRocket}>Reserve Rocket</ReserveBtn>
+          <ReserveBtn className="font-1" onClick={resRocket}>Reserve Rocket</ReserveBtn>
         )}
       </DataContainer>
     </RocketContainer>

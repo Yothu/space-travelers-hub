@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import pageLogo from '../assets/images/planet.png';
+import pageLogo from '../../assets/images/planet.png';
+import '../Font.css';
 
 const Container = styled.header`
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border-bottom: 2px solid black;
 `;
 
@@ -12,13 +13,22 @@ const PageInfo = styled.div`
 `;
 
 const LogoStyle = {
-  height: '4.8rem',
-  width: '4.8rem',
+  width: '4rem',
+  height: '4rem',
+  paddingLeft: '1rem',
+  paddingRight: '1rem',
 };
+
+const Title = styled.h1`
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif !important;
+`;
 
 const LinksContainer = styled.div`
   display: flex;
   align-items: center;
+  padding-right: 1rem;
 `;
 
 const InnerContainer = styled.nav`
@@ -35,7 +45,7 @@ const Header = () => {
       <InnerContainer>
         <PageInfo>
           <PageLogo />
-          <h1>{title}</h1>
+          <Title className="font-1">{title}</Title>
         </PageInfo>
         <LinksContainer>
           <NavLink
