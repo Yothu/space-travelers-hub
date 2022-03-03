@@ -1,6 +1,6 @@
-const LIST_ROCKETS = 'space-travelers/rockets/LIST_ROCKETS';
-const RESERVE_ROCKET = 'space-travelers/rockets/RESERVE_ROCKET';
-const CANCEL_ROCKET = 'space-travelers/rockets/CANCEL_ROCKET';
+const LIST_ROCKETS = 'SPACE-TRAVELERS/ROCKETS/LIST_ROCKETS';
+const RESERVE_ROCKET = 'SPACE-TRAVELERS/ROCKETS/RESERVE_ROCKET';
+const CANCEL_ROCKET = 'SPACE-TRAVELERS/ROCKETS/CANCEL_ROCKET';
 
 const initialState = [];
 

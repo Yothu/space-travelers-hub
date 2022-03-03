@@ -5,7 +5,7 @@ import { getRocketsFromAPI, listRockets } from '../../redux/rockets/rockets';
 import Rocket from '../Rocket/Rocket';
 
 const RocketsContainer = styled.div`
-  padding: 1rem;
+  padding: 0.3rem 2rem;
 `;
 
 const Rockets = () => {
