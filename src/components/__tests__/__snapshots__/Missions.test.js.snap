@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Missions page tests it renders 1`] = `
+<div
+  className="sc-gKclnd jZczCV"
+>
+  <table
+    className="sc-iCfMLu jCBYFq"
+  >
+    <tbody>
+      <tr>
+        <th
+          className="sc-furwcr iVKMVR font-1"
+        >
+          Mission
+        </th>
+        <th
+          className="sc-furwcr iVKMVR font-1"
+        >
+          Description
+        </th>
+        <th
+          className="sc-furwcr iVKMVR font-1"
+        >
+          Status
+        </th>
+        <th
+          className="sc-furwcr iVKMVR font-1"
+        >
+           
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

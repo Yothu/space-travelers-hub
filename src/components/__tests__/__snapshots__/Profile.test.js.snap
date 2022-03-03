@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile page it renders 1`] = `
+<div
+  className="sc-bdvvtL jaFYCD"
+>
+  <div
+    className="sc-gsDKAQ eEigVt"
+  >
+    <div
+      className="sc-hKwDye dTwmPF font-1"
+    >
+      My Rockets
+    </div>
+    <div
+      className="sc-eCImPb jgFGSY"
+    />
+  </div>
+  <div
+    className="sc-dkPtRN UWZAf"
+  >
+    <div
+      className="sc-hKwDye dTwmPF font-1"
+    >
+      My Missions
+    </div>
+    <div
+      className="sc-jRQBWg jFjSsb"
+    />
+  </div>
+</div>
+`;

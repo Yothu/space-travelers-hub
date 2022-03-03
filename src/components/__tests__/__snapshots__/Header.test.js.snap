@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rockets page tests it renders correctly 1`] = `
+<header
+  className="sc-bdvvtL cQxWel"
+>
+  <nav
+    className="sc-eCImPb bmNDXF"
+  >
+    <div
+      className="sc-gsDKAQ hznLYe"
+    >
+      <img
+        alt="page-logo"
+        src="planet.png"
+        style={
+          Object {
+            "height": "3rem",
+            "paddingLeft": "1rem",
+            "paddingRight": "1rem",
+            "width": "3rem",
+          }
+        }
+      />
+      <h1
+        className="sc-dkPtRN EgFWJ font-1"
+      >
+        Space Travelers' Hub
+      </h1>
+    </div>
+    <div
+      className="sc-hKwDye gUBtGx"
+    >
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#000FFF",
+            "fontSize": "0.8rem",
+            "padding": "0 0.5rem",
+            "textDecoration": "underline",
+          }
+        }
+      >
+        Rockets
+      </a>
+      <a
+        className=""
+        href="/missions"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#000FFF",
+            "fontSize": "0.8rem",
+            "padding": "0 0.5rem",
+            "textDecoration": "none",
+          }
+        }
+      >
+        Missions
+      </a>
+      <a
+        className=""
+        href="/profile"
+        onClick={[Function]}
+        style={
+          Object {
+            "borderLeft": "1px solid #000",
+            "color": "#000FFF",
+            "fontSize": "0.8rem",
+            "padding": "0 0 0 0.5rem",
+            "textDecoration": "none",
+          }
+        }
+      >
+        My Profile
+      </a>
+    </div>
+  </nav>
+</header>
+`;
