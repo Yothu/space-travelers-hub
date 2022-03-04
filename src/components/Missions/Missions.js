@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { getMissionsFromAPI, listMissions } from '../../redux/missions/missions';
 import './Missions.css';
 import '../Font.css';
 import Mission from '../Mission/Mission';
@@ -21,15 +19,7 @@ const TableHeader = styled.th`
 `;
 
 const Missions = () => {
-  const dispatch = useDispatch();
   const missions = useSelector((state) => state.missionsReducer);
-
-  useEffect(async () => {
-    if (missions.length === 0) {
-      const APImissions = await getMissionsFromAPI();
-      dispatch(listMissions(APImissions));
-    }
-  }, []);
 
   return (
     <MissionsContainer>
