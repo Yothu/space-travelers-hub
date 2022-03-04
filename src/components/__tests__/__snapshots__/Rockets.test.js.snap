@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rockets page tests it renders 1`] = `
+<div
+  className="sc-iCfMLu nCdzM"
+/>
+`;

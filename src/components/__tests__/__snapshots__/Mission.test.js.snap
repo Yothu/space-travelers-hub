@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mission component it renders 1`] = `
+<tr>
+  <td
+    className="sc-bdvvtL dIUcLi font-1"
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Start
+  </td>
+  <td
+    className="sc-bdvvtL dIUcLi font-1"
+    style={
+      Object {
+        "fontSize": "12px",
+      }
+    }
+  >
+    this is the description
+  </td>
+  <td
+    className="sc-gsDKAQ jMXeGp"
+  >
+    <p
+      className="sc-jRQBWg ejWCLK font-1"
+    >
+      NOT A MEMBER
+    </p>
+  </td>
+  <td
+    className="sc-gsDKAQ jMXeGp"
+  >
+    <button
+      className="sc-dkPtRN kZuHOp font-1"
+      onClick={[Function]}
+    >
+      Join Mission
+    </button>
+  </td>
+</tr>
+`;
